@@ -7,7 +7,7 @@ const getNews = async() =>{
     const client_secret='7hIMqLnaGF';
     await axios({
         method:'get',
-        url: '/v1/search/news.json',
+        url: 'v1/search/news.json',
         params:{query: '코로나', display:20},
         headers:{
             'X-Naver-Client-Id':client_id,
