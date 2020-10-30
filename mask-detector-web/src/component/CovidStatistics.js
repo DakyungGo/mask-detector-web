@@ -3,8 +3,8 @@ import React from 'react';
 function CovidStatistics() {
 
     return (
-    <div>
-        <div>Statistics</div>
+    <div className="CovidStatistics__Wrapper">
+        <div className="CovidStatistics__box">Statistics</div>
     </div>)
 }
 

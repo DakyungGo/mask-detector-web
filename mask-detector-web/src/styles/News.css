@@ -1,0 +1,23 @@
+.News__Wrapper {
+  width: 50%;
+  margin-left: 5%;
+}
+.News-box {
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.News-Content {
+  text-align: start;
+}
+
+.News-title {
+  font-weight: bold;
+}
+
+.News-description {
+}
+
+.News-pubDate {
+  color: thistle;
+}

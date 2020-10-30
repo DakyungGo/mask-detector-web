@@ -10,6 +10,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-scripts": "3.4.3",
+    "react-weekly-day-picker": "^1.0.3",
     "request": "^2.88.2"
   },
   "scripts": {
@@ -33,6 +34,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"https://openapi.naver.com"
-
+  "proxy": "https://openapi.naver.com"
 }
