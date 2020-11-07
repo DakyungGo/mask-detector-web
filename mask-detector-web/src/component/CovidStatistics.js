@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { getCovidNum } from "../function/CovidApi";
 import Bar from "react-chartjs-2";
+import moment from "moment";
 import { findRenderedComponentWithType } from "react-dom/test-utils";
 
 function CovidStatistics() {
   const [covidData, setCovidData] = useState({ labels: [], datasets: [] });
+  const today = moment().format("YYYYMMDD");
+  const today_minus6 = moment().subtract(6, "days").format("YYYYMMDD");
+  const [item, setItem] = useState([]);
   const options = {
     scales: {
       xAxes: [
@@ -20,14 +24,10 @@ function CovidStatistics() {
       ],
     },
   };
-  const today = new Date();
-  const pastWeek = new Date().setDate(today.getDate() - 6);
-  console.log(today);
-  console.log(pastWeek);
 
   useEffect(() => {
-    getCovidNum().then((data) => {
-      console.log(data);
+    getCovidNum(today, today_minus6).then((datas) => {
+      setItem(datas.data.body.items.item);
     });
     setCovidData({
       labels: ["1", "2", "3", "4", "5", "6", "7"],
@@ -43,6 +43,13 @@ function CovidStatistics() {
       ],
     });
   }, []);
+
+  useEffect(() => {
+    if (item) {
+    }
+  }, [item]);
+
+  console.log(item);
 
   return (
     <div className="CovidStatistics__Wrapper">

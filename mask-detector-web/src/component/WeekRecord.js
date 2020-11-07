@@ -7,7 +7,6 @@ function WeekRecord() {
 
   return (
     <div>
-      <div>일주일 간의 기록</div>
       <ReactWeeklyDayPicker
         dayCount={7}
         startDay={new Date().setDate(today.getDate() - 6)}
