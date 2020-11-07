@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getCovidNum = async (today, today_minus6) => {
+const getCovidNum = async (today, today_minus7) => {
   let statusCode = 0;
   let data;
   const key =
@@ -17,7 +17,7 @@ const getCovidNum = async (today, today_minus6) => {
     "&" +
     encodeURIComponent("startCreateDt") +
     "=" +
-    encodeURIComponent(today_minus6); /**/
+    encodeURIComponent(today_minus7); /**/
   queryParams +=
     "&" +
     encodeURIComponent("endCreateDt") +

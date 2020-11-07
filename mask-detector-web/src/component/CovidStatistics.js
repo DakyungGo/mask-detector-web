@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { getCovidNum } from "../function/CovidApi";
 import Bar from "react-chartjs-2";
 import moment from "moment";
-import { findRenderedComponentWithType } from "react-dom/test-utils";
 
 function CovidStatistics() {
   const [covidData, setCovidData] = useState({ labels: [], datasets: [] });
   const today = moment().format("YYYYMMDD");
-  const today_minus6 = moment().subtract(6, "days").format("YYYYMMDD");
+  const today_minus7 = moment().subtract(7, "days").format("YYYYMMDD");
   const [item, setItem] = useState([]);
   const options = {
     scales: {
@@ -26,7 +25,7 @@ function CovidStatistics() {
   };
 
   useEffect(() => {
-    getCovidNum(today, today_minus6).then((datas) => {
+    getCovidNum(today, today_minus7).then((datas) => {
       setItem(datas.data.body.items.item);
     });
     setCovidData({
@@ -45,11 +44,14 @@ function CovidStatistics() {
   }, []);
 
   useEffect(() => {
-    if (item) {
-    }
+    console.log(item);
+    let tmp = 0;
+    item.forEach((element) => {
+      console.log(tmp - element.decideCnt); // 첫 번째 값 당연히 버려야 함
+      console.log(element.stateDt);
+      tmp = element.decideCnt;
+    });
   }, [item]);
-
-  console.log(item);
 
   return (
     <div className="CovidStatistics__Wrapper">
