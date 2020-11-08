@@ -1,15 +1,17 @@
 .Page__Wrapper {
-  margin: auto;
+  margin: 0;
   text-align: center;
-  padding: 5%;
+  padding: 0;
 }
 
-.Row2 {
+.Row1 {
+  padding: 5% 5% 0 5%;
   height: 20%;
 }
 
 .Row2 {
   height: 10%;
+  padding: 0 5% 0 5%;
 }
 
 .Row3 {
@@ -17,4 +19,5 @@
   margin-top: 5%;
   display: flex;
   height: 60%;
+  padding: 0 5% 0 5%;
 }
